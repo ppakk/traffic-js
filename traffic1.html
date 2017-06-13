@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Traffic</title>
+    <style>
+      html, body, #map-canvas {
+        height: 90%;
+		width: 90%;
+        margin: 3px;
+        padding: 3px
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script>
+function initialize() {
+  var myLatlng = new google.maps.LatLng(39.7392, -104.9847);
+  var mapOptions = {
+    zoom: 12,
+    center: myLatlng,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  }
+
+  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+  var trafficLayer = new google.maps.TrafficLayer();
+  trafficLayer.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+	<script>
+	function myTest() {
+	   var j;
+	   document.write("start loop" + "<br />");
+	   for (j=0; j<3; j++) {
+	     document.write("count=" +j + "<br/>");
+	   }
+	}
+	</script>
+  </head>
+  
+  
+<body>
+  
+    <h1>My traffic map</h1>
+	<hr>
+	<a href="http://www.amazon.com">&nbsp;link to amazon</a>
+	
+  <!--
+-->
+    <div id="map-canvas"></div>
+	<p><a href="#" onClick="myTest();">call function</a></p>
+
+</body>
+  
+</html>
